@@ -14,7 +14,6 @@ function Nav({
     .filter((e) => e.paymentStatus == "unpaid" || "overdue")
     .map((i) => i.amountInCents);
   const sum = amount.reduce((a, b) => a + b, 0) / 100;
-  console.log(sum);
 
   return (
     <>

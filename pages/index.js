@@ -1,10 +1,12 @@
+
+
 import axios from "axios";
 import React, { useState } from "react";
 import UserTable from "../components/UserTable";
 import TableHead from "../components/TableHead";
 import Nav from "../components/Nav";
 
-function page({ userData }) {
+function Page({ userData }) {
   const [users, setUsers] = useState(userData);
   const [search, setSearch] = useState("");
 
@@ -54,7 +56,9 @@ function page({ userData }) {
             }
           })
           .map((user) => (
-            <UserTable user={user} />
+            <div key={user.id}>
+              <UserTable user={user} />
+            </div>
           ))}
       </div>
     </>
@@ -74,4 +78,4 @@ export async function getStaticProps() {
   };
 }
 
-export default page;
+export default Page;

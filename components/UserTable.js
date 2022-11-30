@@ -1,9 +1,10 @@
 import React from "react";
 
 function Table({ user }) {
+  
   return (
     <>
-      <details key={user.id}>
+      <details>
         <summary className="list-none">
           <div className="bg-[#ffffff] flex justify-between border-[#D9D5EC] border-y-[1px]">
             <div className="px-5 py-4 w-24">
@@ -123,7 +124,7 @@ function Table({ user }) {
           </div>
           <div>
             {user.activities.map((p) => (
-              <div className="bg-[#F4F2FF] flex">
+              <div key={p.date} className="bg-[#F4F2FF] flex">
                 <div className="px-12 py-4 w-24 text-[14px] font-[300] text-[#6E6893]">
                   {p.date}
                 </div>
